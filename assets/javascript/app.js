@@ -8,9 +8,9 @@ $(document).ready(function(){
 
 
      var stats = {
-        wins:02,
-        losses:5,
-        best:20
+        wins:20,
+        losses:2,
+        best:12
     }
 
     firebase.auth().onAuthStateChanged(function(user) {
@@ -24,7 +24,7 @@ $(document).ready(function(){
           var uid = user.uid;
           var providerData = user.providerData;
           gameStats = database.ref("/stats/"+uid);
-          console.log("test cojoyo")
+          console.log("test cojoyo1")
 
           gameStats.set(stats)
 
@@ -66,7 +66,7 @@ $(document).ready(function(){
             //console.log(childKey)
             locObject.push(loc.val())
 
-            console.log(locObject)
+            //console.log(locObject)
 
          // });
 
