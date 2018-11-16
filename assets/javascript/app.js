@@ -22,18 +22,18 @@ $(document).ready(function(){
           var isAnonymous = user.isAnonymous;
           var uid = user.uid;
           var providerData = user.providerData;
-          var gameStats = database.ref("/stats"+uid);
+          var gameStats = database.ref("/stats/"+uid);
 
 
-          console.log(displayName);
-          console.log(email);
+        //   console.log(displayName);
+        //   console.log(email);
 
-          console.log(emailVerified);
-          console.log(photoURL);
-          console.log(isAnonymous);
+        //   console.log(emailVerified);
+        //   console.log(photoURL);
+        //   console.log(isAnonymous);
 
-          console.log(uid);
-          console.log(providerData);
+        //   console.log(uid);
+        //   console.log(providerData);
 
           
           // ...
@@ -44,6 +44,7 @@ $(document).ready(function(){
       });
 
     gameStats.set(stats)
+    console.log("testing testing")
 
     location.on("child_added", function(loc){
         //loc.forEach(function(childSnapshot) {
