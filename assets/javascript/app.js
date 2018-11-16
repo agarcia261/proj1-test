@@ -24,6 +24,10 @@ $(document).ready(function(){
           var uid = user.uid;
           var providerData = user.providerData;
           gameStats = database.ref("/stats/"+uid);
+          console.log("test cojoyo")
+
+          gameStats.set(stats)
+
 
 
         //   console.log(displayName);
@@ -43,9 +47,7 @@ $(document).ready(function(){
           // ...
         }
       });
-      console.log("test testing")
 
-    gameStats.set(stats)
 
     location.on("child_added", function(loc){
         //loc.forEach(function(childSnapshot) {
