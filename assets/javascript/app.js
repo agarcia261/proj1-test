@@ -2,6 +2,7 @@ $(document).ready(function(){
     
     var database = firebase.database();
     var location = database.ref("/locations");
+    var gameStats={}
 
     var locObject=[]
 
@@ -22,7 +23,7 @@ $(document).ready(function(){
           var isAnonymous = user.isAnonymous;
           var uid = user.uid;
           var providerData = user.providerData;
-          var gameStats = database.ref("/stats/"+uid);
+          gameStats = database.ref("/stats/"+uid);
 
 
         //   console.log(displayName);
