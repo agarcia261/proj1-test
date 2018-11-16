@@ -1,16 +1,16 @@
 $(document).ready(function(){
+    
     var database = firebase.database();
-    var gameStats = database.ref("/stats");
     var location = database.ref("/locations");
 
     var locObject=[]
 
 
-    //  var stats = {
-    //     wins:02,
-    //     losses:5,
-    //     best:20
-    // }
+     var stats = {
+        wins:02,
+        losses:5,
+        best:20
+    }
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -22,6 +22,8 @@ $(document).ready(function(){
           var isAnonymous = user.isAnonymous;
           var uid = user.uid;
           var providerData = user.providerData;
+          var gameStats = database.ref("/stats"+uid);
+
 
           console.log(displayName);
           console.log(email);
@@ -41,6 +43,7 @@ $(document).ready(function(){
         }
       });
 
+    gameStats.set(stats)
 
     location.on("child_added", function(loc){
         //loc.forEach(function(childSnapshot) {
