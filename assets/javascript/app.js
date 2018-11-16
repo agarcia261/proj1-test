@@ -43,9 +43,9 @@ $(document).ready(function(){
           // ...
         }
       });
+      console.log("test testing")
 
     gameStats.set(stats)
-    console.log("testing testing")
 
     location.on("child_added", function(loc){
         //loc.forEach(function(childSnapshot) {
